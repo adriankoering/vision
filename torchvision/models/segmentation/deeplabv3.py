@@ -59,7 +59,7 @@ class ASPPPooling(nn.Sequential):
         size = x.shape[-2:]
         for mod in self:
             x = mod(x)
-        return F.interpolate(x, size=size, mode='bilinear', align_corners=False)
+        return F.interpolate(x, size=size, mode='nearest', align_corners=False)
 
 
 class ASPP(nn.Module):
